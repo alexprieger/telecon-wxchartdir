@@ -414,7 +414,7 @@ void
 wxChartViewer::Render(wxDC& dc, BaseChart* c)
 {
   int dpi = getDPI();
-  wxString options = (dpi > 0) ? wxString::Format("+dpi=%d;alpha=1", dpi) : wxString("alpha=1");
+  wxString options = (dpi > 0) ? wxString::Format("+dpi=%d;alpha=1;", dpi) : wxString("alpha=1");
   c->setOutputOptions(options.ToUTF8());
   MemBlock m = c->makeChart(Chart::BMP);
   wxMemoryInputStream in(m.data, m.len);
